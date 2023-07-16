@@ -40,18 +40,6 @@ pasteBtns.forEach((el) => {
   });
 });
 
-// pasteBtn1.addEventListener("click", () => {
-//   // console.log("click me");
-
-//   parseClipboardData(pasteArea1);
-// });
-
-// pasteBtn2.addEventListener("click", () => {
-//   // console.log("click me");
-
-//   parseClipboardData(pasteArea2);
-// });
-
 const mapFromDataToSheet = (userInputForm) => {
   let userInputData = new FormData(userInputForm);
   for (const pair of userInputData.entries()) {
@@ -71,15 +59,6 @@ const mapFromDataToSheet = (userInputForm) => {
 userInputBtn.addEventListener("click", () => {
   mapFromDataToSheet(userInputForm);
 });
-
-// let formState = {
-//   form1: {
-//     numOfSizes: 3
-//   },
-//   form2: {
-//     numOfSizes: 3
-//   }
-// };
 
 const displayExtraSizeInput = (btn) => {
   // formState.form1.numOfSizes = 1++;
