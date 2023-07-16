@@ -1,90 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Sheet Generator</title>
+    <script src="./js/JsBarcode.ean-upc.min.js"></script>
+    <link href="style.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inventory Sheet Generator</title>
-  <script src="./js/JsBarcode.ean-upc.min.js"></script>
-  <link href="style.css" rel="stylesheet" />
-</head>
-
-<body>
-  <!-- <h1>Test!</h1>
+  <body>
+    <!-- <h1>Test!</h1>
   <button onclick="generatePDF()">Save PDF</button>
   <div id="singleItemTemplateTarget">
     <h1>single</h1> 
   </div>-->
-  <div id="test" style="width: 200px; height: 200px;">
-    <svg id="barcode"></svg>
-  </div>
-  <div class="container screenOnly">
-    <form action="#" id="userInputForm" onsubmit="event.preventDefault()">
-      <h1>Sheet 1</h1>
-      <label for="productName">Product Name:</label>
-      <input type="text" name="productName">
-      <label for="variantName">Variant Name:</label>
-      <input type="text" name="variantName">
-      <br>
-      <label for="size1">1st Size Name:</label>
-      <input type="text" name="size1">
-      <label for="barcode1">1st UPC Barcode</label>
-      <input type="text" name="barcode1">
-      <label for="sku1">1st SKU Number</label>
-      <input type="text" name="sku1">
-      <br>
-      <label for="size2">2nd Size Name:</label>
-      <input type="text" name="size2">
-      <label for="barcode2">2nd UPC Barcode</label>
-      <input type="text" name="barcode2">
-      <label for="sku2">2nd SKU Number</label>
-      <input type="text" name="sku2">
-      <br>
-      <label for="size3">3rd Size Name:</label>
-      <input type="text" name="size3">
-      <label for="barcode3">3rd UPC Barcode</label>
-      <input type="text" name="barcode3">
-      <label for="sku3">3rd SKU Number</label>
-      <input type="text" name="sku3">
-      <br>
-      <button class="extraSizeBtn" id="extraSizeBtn1">Click to Input More Sizes</button>
-      <!-- <label for="size4">4th Size Name:</label>
+    <div class="container screenOnly">
+      <form action="#" id="userInputForm" onsubmit="event.preventDefault()">
+        <h1>Sheet 1</h1>
+        <label for="productName">Product Name:</label>
+        <input type="text" name="productName" />
+        <label for="variantName">Variant Name:</label>
+        <input type="text" name="variantName" />
+        <br />
+        <label for="size1">1st Size Name:</label>
+        <input type="text" name="size1" />
+        <label for="barcode1">1st UPC Barcode</label>
+        <input type="text" name="barcode1" />
+        <label for="sku1">1st SKU Number</label>
+        <input type="text" name="sku1" />
+        <br />
+        <label for="size2">2nd Size Name:</label>
+        <input type="text" name="size2" />
+        <label for="barcode2">2nd UPC Barcode</label>
+        <input type="text" name="barcode2" />
+        <label for="sku2">2nd SKU Number</label>
+        <input type="text" name="sku2" />
+        <br />
+        <label for="size3">3rd Size Name:</label>
+        <input type="text" name="size3" />
+        <label for="barcode3">3rd UPC Barcode</label>
+        <input type="text" name="barcode3" />
+        <label for="sku3">3rd SKU Number</label>
+        <input type="text" name="sku3" />
+        <br />
+        <button class="extraSizeBtn" id="extraSizeBtn1">
+          Click to Input More Sizes
+        </button>
+        <!-- <label for="size4">4th Size Name:</label>
       <input type="text" name="size4">
       <label for="barcode4">4th UPC Barcode</label>
       <input type="text" name="barcode4">
       <label for="sku4">4th SKU Number</label>
       <input type="text" name="sku4"> -->
 
-      <br>
-      <h1>Sheet 2</h1>
-      <label for="productName-sheet2">Product Name:</label>
-      <input type="text" name="productName-sheet2">
-      <label for="variantName-sheet2">Variant Name:</label>
-      <input type="text" name="variantName-sheet2">
-      <br>
-      <label for="size1-sheet2">1st Size Name:</label>
-      <input type="text" name="size1-sheet2">
-      <label for="barcode1-sheet2">1st UPC Barcode</label>
-      <input type="text" name="barcode1-sheet2">
-      <label for="sku1-sheet2">1st SKU Number</label>
-      <input type="text" name="sku1-sheet2">
-      <br>
-      <label for="size2-sheet2">2nd Size Name:</label>
-      <input type="text" name="size2-sheet2">
-      <label for="barcode2-sheet2">2nd UPC Barcode</label>
-      <input type="text" name="barcode2-sheet2">
-      <label for="sku2-sheet2">2nd SKU Number</label>
-      <input type="text" name="sku2-sheet2">
-      <br>
-      <label for="size3-sheet2">3rd Size Name:</label>
-      <input type="text" name="size3-sheet2">
-      <label for="barcode3-sheet2">3rd UPC Barcode</label>
-      <input type="text" name="barcode3-sheet2">
-      <label for="sku3-sheet2">3rd SKU Number</label>
-      <input type="text" name="sku3-sheet2">
-      <br>
-      <button class="extraSizeBtn" id="extraSizeBtn2">Click to Input More Sizes</button>
-      <!-- 
+        <br />
+        <h1>Sheet 2</h1>
+        <label for="productName-sheet2">Product Name:</label>
+        <input type="text" name="productName-sheet2" />
+        <label for="variantName-sheet2">Variant Name:</label>
+        <input type="text" name="variantName-sheet2" />
+        <br />
+        <label for="size1-sheet2">1st Size Name:</label>
+        <input type="text" name="size1-sheet2" />
+        <label for="barcode1-sheet2">1st UPC Barcode</label>
+        <input type="text" name="barcode1-sheet2" />
+        <label for="sku1-sheet2">1st SKU Number</label>
+        <input type="text" name="sku1-sheet2" />
+        <br />
+        <label for="size2-sheet2">2nd Size Name:</label>
+        <input type="text" name="size2-sheet2" />
+        <label for="barcode2-sheet2">2nd UPC Barcode</label>
+        <input type="text" name="barcode2-sheet2" />
+        <label for="sku2-sheet2">2nd SKU Number</label>
+        <input type="text" name="sku2-sheet2" />
+        <br />
+        <label for="size3-sheet2">3rd Size Name:</label>
+        <input type="text" name="size3-sheet2" />
+        <label for="barcode3-sheet2">3rd UPC Barcode</label>
+        <input type="text" name="barcode3-sheet2" />
+        <label for="sku3-sheet2">3rd SKU Number</label>
+        <input type="text" name="sku3-sheet2" />
+        <br />
+        <button class="extraSizeBtn" id="extraSizeBtn2">
+          Click to Input More Sizes
+        </button>
+        <!-- 
       <br>
       <label for="size4-sheet2">4th Size Name:</label>
       <input type="text" name="size4-sheet2">
@@ -92,111 +92,115 @@
       <input type="text" name="barcode4-sheet2">
       <label for="sku4-sheet2">4th SKU Number</label>
       <input type="text" name="sku4-sheet2"> -->
-      
-    </form>
-    <button class="enter">Enter</button>
-    <div class="clipboard">
-      <h2>Clipboard</h2>
-      <p>
-        <button class="paste1">Paste</button>
-      </p>
-      <p>
-        <button class="paste2">Paste</button>
-      </p>
-      
-<div class="container">
-  
-</div>
+      </form>
+      <button class="enter">Enter</button>
+      <div class="clipboard">
+        <h2>Clipboard</h2>
+        <p>
+          <button class="pasteBtn" id="pasteBtn1" data-target="pasteArea1">
+            Paste
+          </button>
+        </p>
+        <p>
+          <button class="pasteBtn" id="pasteBtn2" data-target="pasteArea2">
+            Paste
+          </button>
+        </p>
+
+        <div class="container"></div>
+      </div>
     </div>
-  </div>
-  <div class="container printOnly">
-    <div class="singleProduct">
-      <div class="singleProduct-halfGrid">
-        <div class="singleProduct-halfGrid-left">
-          <div class="singleProduct-halfGrid-title">
-            <p id="productName"></p>
-            <p id="variantName"></p>
+    <div class="container printOnly">
+      <div class="singleProduct">
+        <div class="singleProduct-halfGrid">
+          <div class="singleProduct-halfGrid-left">
+            <div class="singleProduct-halfGrid-title">
+              <p id="productName"></p>
+              <p id="variantName"></p>
+            </div>
+            <div
+              class="singleProduct-halfGrid-image singleProduct-halfGrid-image--1"
+              id="pasteArea1"
+            >
+              <!-- <img src="./images/test.jpg" alt=""> -->
+            </div>
           </div>
-          <div class="singleProduct-halfGrid-image singleProduct-halfGrid-image--1">
-            <!-- <img src="./images/test.jpg" alt=""> -->
+          <div class="singleProduct-halfGrid-right">
+            <div class="singleProduct-halfGrid-right-column">
+              <div class="size-column center">
+                <p id="size1"></p>
+              </div>
+              <div class="barcode-column center-col">
+                <svg class="barcode-column--barcode" id="barcode1"></svg>
+                <span class="barcode-column--sku" id="sku1"></span>
+              </div>
+            </div>
+            <div class="singleProduct-halfGrid-right-column">
+              <div class="size-column center">
+                <p id="size2"></p>
+              </div>
+              <div class="barcode-column center-col">
+                <svg class="barcode-column--barcode" id="barcode2"></svg>
+                <span class="barcode-column--sku" id="sku2"></span>
+              </div>
+            </div>
+            <div class="singleProduct-halfGrid-right-column">
+              <div class="size-column center">
+                <p id="size3"></p>
+              </div>
+              <div class="barcode-column center-col">
+                <svg class="barcode-column--barcode" id="barcode3"></svg>
+                <span class="barcode-column--sku" id="sku3"></span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="singleProduct-halfGrid-right">
-          <div class="singleProduct-halfGrid-right-column">
-            <div class="size-column center">
-              <p id="size1"></p>
+        <div class="singleProduct-halfGrid">
+          <div class="singleProduct-halfGrid-left">
+            <div class="singleProduct-halfGrid-title">
+              <p id="productName-sheet2"></p>
+              <span id="variantName-sheet2"></span>
             </div>
-            <div class="barcode-column center-col">
-              <svg class="barcode-column--barcode" id="barcode1"></svg>
-              <span class="barcode-column--sku" id="sku1"></span>
-            </div>
-          </div>
-          <div class="singleProduct-halfGrid-right-column">
-            <div class="size-column center">
-              <p id="size2"></p>
-            </div>
-            <div class="barcode-column center-col">
-              <svg class="barcode-column--barcode" id="barcode2"></svg>
-              <span class="barcode-column--sku" id="sku2"></span>
+            <div
+              class="singleProduct-halfGrid-image singleProduct-halfGrid-image--2"
+              id="pasteArea2"
+            >
+              <!-- <img src="./images/test.jpg" alt=""> -->
             </div>
           </div>
-          <div class="singleProduct-halfGrid-right-column">
-            <div class="size-column center">
-              <p id="size3"></p>
+          <div class="singleProduct-halfGrid-right">
+            <div class="singleProduct-halfGrid-right-column">
+              <div class="size-column center">
+                <p id="size1-sheet2"></p>
+              </div>
+              <div class="barcode-column center-col">
+                <svg class="barcode-column--barcode" id="barcode1-sheet2"></svg>
+                <span class="barcode-column--sku" id="sku1-sheet2"></span>
+              </div>
             </div>
-            <div class="barcode-column center-col">
-              <svg class="barcode-column--barcode" id="barcode3"></svg>
-              <span class="barcode-column--sku" id="sku3"></span>
+            <div class="singleProduct-halfGrid-right-column">
+              <div class="size-column center">
+                <p id="size2-sheet2"></p>
+              </div>
+              <div class="barcode-column center-col">
+                <svg class="barcode-column--barcode" id="barcode2-sheet2"></svg>
+                <span class="barcode-column--sku" id="sku2-sheet2"></span>
+              </div>
+            </div>
+            <div class="singleProduct-halfGrid-right-column">
+              <div class="size-column center">
+                <p id="size3-sheet2"></p>
+              </div>
+              <div class="barcode-column center-col">
+                <svg class="barcode-column--barcode" id="barcode3-sheet2"></svg>
+                <span class="barcode-column--sku" id="sku3-sheet2"></span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="singleProduct-halfGrid">
-        <div class="singleProduct-halfGrid-left">
-          <div class="singleProduct-halfGrid-title">
-            <p id="productName-sheet2"></p>
-            <span id="variantName-sheet2"></span>
-          </div>
-          <div class="singleProduct-halfGrid-image singleProduct-halfGrid-image--2">
-            <!-- <img src="./images/test.jpg" alt=""> -->
-          </div>
-        </div>
-        <div class="singleProduct-halfGrid-right">
-          <div class="singleProduct-halfGrid-right-column">
-            <div class="size-column center">
-              <p id="size1-sheet2"></p>
-            </div>
-            <div class="barcode-column center-col">
-              <svg class="barcode-column--barcode" id="barcode1-sheet2"></svg>
-              <span class="barcode-column--sku" id="sku1-sheet2"></span>
-            </div>
-          </div>
-          <div class="singleProduct-halfGrid-right-column">
-            <div class="size-column center">
-              <p id="size2-sheet2"></p>
-            </div>
-            <div class="barcode-column center-col">
-              <svg class="barcode-column--barcode" id="barcode2-sheet2"></svg>
-              <span class="barcode-column--sku" id="sku2-sheet2"></span>
-            </div>
-          </div>
-          <div class="singleProduct-halfGrid-right-column">
-            <div class="size-column center">
-              <p id="size3-sheet2"></p>
-            </div>
-            <div class="barcode-column center-col">
-              <svg class="barcode-column--barcode" id="barcode3-sheet2"></svg>
-              <span class="barcode-column--sku" id="sku3-sheet2"></span>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </div>
 
-  <script src="./js/script.js"></script>
-
-</body>
-
+    <script src="./js/script.js"></script>
+  </body>
 </html>
